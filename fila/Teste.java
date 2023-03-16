@@ -8,7 +8,7 @@ public class Teste{
 		
 		
 
-		Fila novaFila = new Fila();
+		Fila<String>novaFila = new Fila<>();
 		
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Digite -a para utilizar o push\n-s para exibir a fila e encerrar o programa\ne -p para utilizar o pop");
@@ -17,7 +17,7 @@ public class Teste{
 			String escolha = scan.next();	
 			
 				if(escolha.equals("-a")) {
-					 novaFila.enqueue(scan.nextInt());
+					 novaFila.enqueue(scan.next());
 				}else if(escolha.equals("-s")) {
 					System.out.println(novaFila.toString());
 					break;

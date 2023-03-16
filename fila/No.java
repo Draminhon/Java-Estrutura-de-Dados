@@ -1,23 +1,23 @@
 package com.murilo.fila;
 
-public class No {
+public class No<T>{
 
-	private Object valor;
-	private No proximo = null;
-	public No(Object valor) {
+	private T valor;
+	private No<T> proximo = null;
+	public No(T valor) {
 		super();
 		this.valor = valor;
 	}
 	public Object getValor() {
 		return valor;
 	}
-	public void setValor(Object valor) {
+	public void setValor(T valor) {
 		this.valor = valor;
 	}
-	public No getProximo() {
+	public No<T> getProximo() {
 		return proximo;
 	}
-	public void setProximo(No proximo) {
+	public void setProximo(No<T> proximo) {
 		this.proximo = proximo;
 	}
 	@Override

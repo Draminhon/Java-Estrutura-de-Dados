@@ -1,26 +1,25 @@
 package com.murilo.fila;
 
-public class Fila {
+public class Fila<T>{
 	
-	private No base;
-	private No topo;
+	private No<T> base;
+	private No<T> topo;
 	private int quantidade = 0;
-	No auxiliar;
 	
 	Fila(){
 		this.base = null;
 		this.topo = null;
 	}
 	
-	public void enqueue(Object obj) {
-		No novo = new No(obj);
+	public void enqueue(T obj) {
+		No<T> novo = new No<>(obj);
 		quantidade++;
 		if(quantidade==1) {
 			base = novo;
 			topo = novo;
 			topo.setProximo(null);
 		}else if(quantidade>1) {
-		  No aux = topo;
+		  No<T> aux = topo;
 		  topo = novo;
 			aux.setProximo(novo);
 			
@@ -35,10 +34,10 @@ public class Fila {
 		return topo == null ? true : false;
 	}
 	
-	public No dequeue() {
+	public No<T> dequeue() {
 		
 		if(!isEmpty()) {
-			No noPoped = base;
+			No<T> noPoped = base;
 			base = base.getProximo();
 			return noPoped;
 		}
@@ -52,18 +51,19 @@ public class Fila {
 		stringAux += "       Fila\n";
 		stringAux += "-------------------\n";
 		
-		No aux = base;
-		
+		No<T> aux = base;
+		int i = 0;
 		while(true) {
 			
 			if(aux!=null) {
-				stringAux += "Dado = " + aux.getValor() + "\n";
+				i++;
+				stringAux += "posicao " + i + " = " + aux.getValor() + " | ";
 				aux = aux.getProximo();
 			}else {
 				break;
 			}
 		}
-		stringAux += "===================";
+		stringAux += "\n===================";
 		if(quantidade == 0) {
 			stringAux = "Fila vazia!";
 		}
