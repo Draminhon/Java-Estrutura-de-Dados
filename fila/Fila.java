@@ -12,7 +12,8 @@ public class Fila {
 		this.topo = null;
 	}
 	
-	public void push(No novo) {
+	public void enqueue(Object obj) {
+		No novo = new No(obj);
 		quantidade++;
 		if(quantidade==1) {
 			base = novo;
@@ -34,7 +35,7 @@ public class Fila {
 		return topo == null ? true : false;
 	}
 	
-	public No pop () {
+	public No dequeue() {
 		
 		if(!isEmpty()) {
 			No noPoped = base;
@@ -63,6 +64,9 @@ public class Fila {
 			}
 		}
 		stringAux += "===================";
+		if(quantidade == 0) {
+			stringAux = "Fila vazia!";
+		}
 		return stringAux;
 		
 	}

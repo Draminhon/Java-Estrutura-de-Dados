@@ -17,16 +17,17 @@ public class Teste{
 			String escolha = scan.next();	
 			
 				if(escolha.equals("-a")) {
-					 novaFila.push(new  No  (scan.nextInt()));
+					 novaFila.enqueue(scan.nextInt());
 				}else if(escolha.equals("-s")) {
 					System.out.println(novaFila.toString());
+					break;
 				}else if(escolha.equals("-p")) {
-					System.out.println(novaFila.pop());
+					System.out.println(novaFila.dequeue());
 				}
-			
+	
 			
 		}
-
+        scan.close();
 
 	}
 

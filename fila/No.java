@@ -2,16 +2,16 @@ package com.murilo.fila;
 
 public class No {
 
-	private int valor;
+	private Object valor;
 	private No proximo = null;
-	public No(int valor) {
+	public No(Object valor) {
 		super();
 		this.valor = valor;
 	}
-	public int getValor() {
+	public Object getValor() {
 		return valor;
 	}
-	public void setValor(int valor) {
+	public void setValor(Object valor) {
 		this.valor = valor;
 	}
 	public No getProximo() {
@@ -22,7 +22,7 @@ public class No {
 	}
 	@Override
 	public String toString() {
-		return "No [valor=" + valor + "]";
+		return "valor retirado = " + valor;
 	}
 	
 	
